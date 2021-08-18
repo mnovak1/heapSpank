@@ -38,6 +38,7 @@ public class DefaultConfig implements Config {
 	String viewClass = "com.github.eostermueller.heapspank.leakyspank.console.DefaultView";
 	boolean runSelfTestAndExit = false;
 	String startsWithExclusionFilter = null;
+	String pathToOutputFile = null;
 	
 	@Override 
 	public void setRegExExclusionFilter(String string) {
@@ -171,5 +172,15 @@ public class DefaultConfig implements Config {
 	@Override
 	public void setJMapHistoLive(boolean b) {
 		jmapHistoLive = b;
+	}
+
+	@Override
+	public String getLeakOutputFile() {
+		return pathToOutputFile;
+	}
+
+	@Override
+	public void setLeakOutputFile(String pathToOutputFile) {
+		this.pathToOutputFile = pathToOutputFile;
 	}
 }

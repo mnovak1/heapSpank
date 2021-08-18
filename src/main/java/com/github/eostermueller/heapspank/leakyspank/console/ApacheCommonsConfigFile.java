@@ -215,4 +215,15 @@ public class ApacheCommonsConfigFile extends DefaultConfig {
 		
 		return rc;
 	}
+
+	@Override
+	public String getLeakOutputFile() {
+		String pathToOutputFile = "";
+		String key = "org.heapspank.output.file";
+
+		pathToOutputFile = this.getConfiguration().getString(key);
+		configDebug("heapSpank config: " + key + "=" + pathToOutputFile);
+
+		return pathToOutputFile;
+	}
 }

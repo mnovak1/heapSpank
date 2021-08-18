@@ -40,7 +40,7 @@ public class DefaultView implements ConsoleView, EventListener {
 			 +"  %7d"				//result.line.num,
 			 +"  %s"				//result.line.className
 	 		 +"%n";	
-	private static final String HEADER_FORMAT = 
+	public static final String HEADER_FORMAT =
 			  "%5s"			//result.getPercentageOfRunsWithUpwardByteTrend() * 100,
 			 +"  %4s"				//result.countRunsWithBytesIncrease,
 			 +" %4s"				//this.getLeakySpankContext().getCurrentRunCount(),
@@ -67,7 +67,7 @@ public class DefaultView implements ConsoleView, EventListener {
 	private void setMultiLineDisplayData(String v) {
 		this.multiLineDisplayData = v;
 	}
-	private String getMultiLineDisplayData() {
+	public String getMultiLineDisplayData() {
 		return this.multiLineDisplayData;
 	}
 	private void displayHeader() {

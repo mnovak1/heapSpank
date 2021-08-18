@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -133,6 +134,17 @@ public class LeakySpankConsole implements DisplayUpdateListener {
 					this.leakySpankContext.addJMapHistoRun(m);
 				printTopBar();
 				view.printView();
+				if (config.getLeakOutputFile() != null && !"".equals(config.getLeakOutputFile()))	{
+					File output = new File(config.getLeakOutputFile());
+					if (output.delete())	{
+						output.createNewFile();
+					}
+					PrintWriter writer = new PrintWriter(output);
+					writer.println("LKY%	#B-INC	#JMH	#I-INC	#R-INC	BYTES	INSTANCES	NUM	CLASS");
+					writer.println(view.getMultiLineDisplayData());
+					writer.flush();
+					writer.close();
+				}
 				printDebug();
 				printExceptions();
 				System.out.flush();

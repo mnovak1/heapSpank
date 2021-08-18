@@ -43,4 +43,5 @@ public interface ConsoleView
 	public DisplayUpdateListener getDisplayUpdateListener();
 	public int getDisplayRowCount();
 	public void setDisplayRowCount(int rows);
+	public String getMultiLineDisplayData();
 }

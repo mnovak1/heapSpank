@@ -1,5 +1,6 @@
 package com.github.eostermueller.heapspank.leakyspank.console;
 
+import java.io.File;
 import java.util.List;
 
 import com.github.eostermueller.heapspank.leakyspank.ClassNameFilter;
@@ -48,4 +49,6 @@ public interface Config {
 	public void setDisplayRowCount(int rows);
 	public boolean getJMapHistoLive();
 	public void setJMapHistoLive(boolean b);
+	public String getLeakOutputFile();
+	public void setLeakOutputFile(String output);
 }
